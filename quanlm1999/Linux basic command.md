@@ -28,12 +28,12 @@
 * **sudo** Cho phép người dùng sử dụng với tư cách là superuser /root
 * **clear** Dọn sạch cửa sổ terminal 
 #### Stdin,Stdout,Stderr
-* **STDIN** Đầu vào chuẩn, dữ liệu được đưa vào  chương trình 
+* **STDIN** Đầu vào chuẩn, dữ liệu được đưa vào  chương trình  
 * **STDOUT** Đầu ra chuẩn, dữ liệu  qua chương trình được đưa  kết quả 
 * **STDERR** Đầu báo lỗi,đưa thông tin về lỗi 
 #### Piping 
-* **Redirect** Chuyển hướng Stdin/Stdout từ file sang program khác khác để sử dụng 
-* **Piping** Chuyển dữ liệu từ program này sang program khác sử dung ký tự  | 
+* **Redirect** Chuyển hướng Stdin/Stdout từ file sang program khác khác để sử dụng  
+* **Piping** Chuyển dữ liệu từ program này sang program khác sử dung ký tự  |  
 #### ‘cat’, ‘join’, ‘paste’ command 
 **cat** nối file theo chiều dọc
  * **Option** ast
@@ -96,14 +96,41 @@
 * -v hiển thị các dòng không có chứa từ tìm kiếm trong file 
 
 **sed** Trình soạn thảo văn bản luồng, hỗ trợ chhc năng như tìm kiếm, find & replace , chèn , xóa 
-* **Option** $sed 's/<từ cần thay thé>/<từ  dùng để thay thế >/<option> <filename>
+* **Option**
+* **sed 's/<từ cần thay thé>/<từ  dùng để thay thế >/<option> <filename>**
 * - <number> thay thế từ cần thay thế số 2 trong dòng
 * - g thay thế toàn bộ trong file 
 * - p lặp lại dòng 
 * - sed -n <option> <filename> chỉ in ra dòng được sửa 
 * - sed 'nd' <filename> xóa dòng n trong file, dòng cuối thì n=$
 
-**awk** Dùng để thao tác với tệp, tạo các báo cáo 
+**awk** Là ngôn ngữ lập trình thôn dịch dùng để thao tác với tệp, tạo các báo cáo 
 * **Option** awk <option> 'Lựa chọn {hành động cần làm}' <filename _input> > <filename_output>
+- Muốn ốn in ra cột 1,4 ta dùng: $ awk '{print $1,$4}' <filename>
+ - In ra dòng có từ linux: $ awk '/linux/ {print}' test.txt 
+
+#### VIM
+**VIM** Vim là một trình soạn thảo văn bản tương thích với Vi. Nó có thể được sử dụng để chỉnh sửa tất cả các loại văn bản đơn giản.
+**Các mode trong Vim**
+* Insert mode: Mode này cho phép bạn nhập, chèn các kí tự.
+* Command mode: Mode này giúp bạn thực hiện các command, tương tác với text object. Vd như nếu bạn gõ d trong Insert mode sẽ tạo ra kí tự "d" trên màn hình, nhưng trong Command mode nó hiểu đây là 1 lệnh xóa(delete) một text object nào đó.
+
+**Điều khiển con trỏ**
+* H:Trái
+* J :Xuống 
+* K :Lên 
+* L :Phải
+
+**Cấu trúc**
+
+* [number][command][motion/ text object]
+x 	Xóa 1 kí tự sau con trỏ
+r   Thay thế 1 kí tự sau con trỏ
+s 	Xóa kí tự dưới con trỏ và chuyển sang chế độ insert mode.
+d   Dlete - Xóa text được định nghĩa bởi motion.
+c   Change - Xóa text được định nghĩa theo motion sau đó tự chuyển về chế độ insert.
+y    Yank - Copy text được định nghĩa bởi motion.
+
+
  
 
